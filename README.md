@@ -1,6 +1,6 @@
 # SocCyber-by Reyvem — Log Analysis Challenge
 
-A hands-on SOC exercise for cybersecurity students. Students review 40 simulated SIEM events across 15 attack categories, then answer 10 analyst questions. Scoring and explanations are shown on submit; logs and results can be downloaded.
+This is free and Open Source A hands-on SOC exercise for cybersecurity students. Students review 40 simulated SIEM events across 15 attack categories, then answer 10 analyst questions. Scoring and explanations are shown on submit; logs and results can be downloaded.
 
 ## Project layout
 
