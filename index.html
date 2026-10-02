@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SocCyber-by Reyvem — Log Analysis Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>SocCyber<span>-by Reyvem</span></h1>
+      <p>Log analysis challenge. Review the SIEM events from a simulated two-week incident window, then answer the ten analyst questions on the right. Answers are not case-sensitive.</p>
+    </div>
+    <div class="toolbar">
+      <button id="dlLogs" type="button">Download logs (CSV)</button>
+      <button id="dlResults" type="button" disabled>Download results</button>
+    </div>
+  </header>
+
+  <main>
+    <section aria-label="Log dashboard">
+      <div class="stats">
+        <div class="stat"><b id="sTotal">–</b><small>Total events</small></div>
+        <div class="stat"><b id="sAttack">–</b><small>Attack events</small></div>
+        <div class="stat"><b id="sCrit">–</b><small>Critical severity</small></div>
+        <div class="stat"><b id="sCats">–</b><small>Attack categories</small></div>
+      </div>
+      <div class="filters">
+        <input type="text" id="search" placeholder="Search logs (IP, user, host, keyword)…" aria-label="Search logs">
+        <select id="catFilter" aria-label="Filter by category"><option value="">All categories</option></select>
+        <select id="sevFilter" aria-label="Filter by severity">
+          <option value="">All severities</option>
+          <option>Critical</option><option>High</option><option>Medium</option><option>Info</option>
+        </select>
+        <span class="count" id="logCount"></span>
+      </div>
+      <div class="logwrap">
+        <table>
+          <thead><tr><th>#</th><th>Timestamp</th><th>Source</th><th>Severity</th><th>Category</th><th>Event</th></tr></thead>
+          <tbody id="logBody"><tr><td colspan="6" class="empty">Loading events…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside aria-label="Analyst questions">
+      <h2>Analyst questions</h2>
+      <p class="lead">10 questions. Use the search and filters to work through the evidence.</p>
+
+      <div class="score" id="score" hidden>
+        <b id="scoreNum"></b><span id="scoreText"></span>
+        <div class="bar"><i id="scoreBar"></i></div>
+      </div>
+
+      <form id="quiz" onsubmit="return false"></form>
+
+      <div class="actions">
+        <button class="primary" id="submit" type="button">Check answers</button>
+        <button id="reset" type="button">Reset</button>
+      </div>
+
+      <div class="review" id="review" hidden>
+        <p>Missed some? Enter the review code from your instructor to unlock the correct answers and explanations.</p>
+        <div class="row">
+          <input type="text" id="reviewCode" placeholder="Review code" aria-label="Review code" autocomplete="off">
+          <button id="unlock" type="button">Unlock</button>
+        </div>
+        <div class="msg" id="reviewMsg"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>SocCyber-by Reyvem · All IP addresses, hosts and domains are fictional or reserved documentation ranges. Built for training use.</footer>
+
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

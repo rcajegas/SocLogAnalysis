@@ -1,0 +1,66 @@
+{
+  "_comment": "INSTRUCTOR ONLY. Never commit or publish this file. Run tools/build_answers.py to generate assets/data/answers.json from it.",
+  "review_code": "REYVEM-2026-REVIEW",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which IP address carried out the SSH brute-force attack against srv-web-01?",
+      "answers": ["203.0.113.45"],
+      "explanation": "Logs 1-6 show repeated failed SSH logins from 203.0.113.45 (187 attempts in 60 seconds), ending in an accepted password. Repeated failures from one IP against several usernames is the classic brute-force signature."
+    },
+    {
+      "id": 2,
+      "question": "Which account did the brute-force attacker eventually log into successfully?",
+      "answers": ["admin"],
+      "explanation": "Log 6 shows 'Accepted password for admin from 203.0.113.45'. After a flood of failures, a single 'Accepted' line from the same source is the moment of compromise."
+    },
+    {
+      "id": 3,
+      "question": "What is the name of the backdoor account created after the SSH compromise?",
+      "answers": ["backupsvc"],
+      "explanation": "Log 7 shows admin running 'useradd -m -G sudo backupsvc'. Creating a new sudo-capable user named to look like a service account is a common persistence technique."
+    },
+    {
+      "id": 4,
+      "question": "Which IP address launched the SQL injection attempts against products.php?",
+      "answers": ["198.51.100.23"],
+      "explanation": "Logs 10-12 show 198.51.100.23 sending payloads like ' OR '1'='1, UNION SELECT and DROP TABLE in the id parameter. The 500 errors suggest the input reached the database."
+    },
+    {
+      "id": 5,
+      "question": "Which user submitted credentials to the phishing site?",
+      "answers": ["jmartinez"],
+      "explanation": "Log 14 shows user jmartinez POSTing a login form to company-portall.com (a lookalike of the real portal). Log 15 then shows an impossible-travel sign-in from a Tor exit node using that account."
+    },
+    {
+      "id": 6,
+      "question": "How many ports did 192.0.2.88 probe on 10.0.0.5 in its first scan?",
+      "answers": ["12", "twelve"],
+      "explanation": "Log 16 lists 12 ports hit within 4 seconds: 21, 22, 23, 25, 80, 110, 143, 443, 445, 3306, 3389 and 8080. Many ports from one source in seconds is a port scan."
+    },
+    {
+      "id": 7,
+      "question": "What is the filename of the web shell uploaded on 17 September?",
+      "answers": ["shell.php", "/uploads/shell.php", "uploads/shell.php"],
+      "explanation": "Log 20 shows shell.php uploaded through the avatar form with a faked image/jpeg content type. Logs 21-22 show it being used to run whoami and read /etc/passwd via the cmd parameter."
+    },
+    {
+      "id": 8,
+      "question": "Which IP address did the PowerShell command-and-control beacon connect to?",
+      "answers": ["45.77.213.9", "45.77.213.9:4444"],
+      "explanation": "Log 24 shows powershell.exe (spawned by Word in log 23) connecting outbound to 45.77.213.9 on port 4444 with a regular 60-second beacon. Port 4444 and fixed intervals are strong C2 indicators."
+    },
+    {
+      "id": 9,
+      "question": "Which workstation was the source of the DNS tunneling traffic?",
+      "answers": ["ws-eng-12", "10.0.4.31"],
+      "explanation": "Logs 28-30 show WS-ENG-12 (10.0.4.31) sending thousands of TXT queries with ~61-character hex subdomains to tunnel.evil-cdn.net. Long encoded labels plus high TXT volume indicates data moving over DNS."
+    },
+    {
+      "id": 10,
+      "question": "Which host did the lateral movement on 24 September originate from?",
+      "answers": ["ws-fin-07"],
+      "explanation": "Logs 39-40 show WS-FIN-07 connecting to ADMIN$ on FS-01 and DC-01 and creating the PSEXESVC service. This is the same host infected with ransomware on 18 September, so the attacker is now pivoting with kpatel's credentials."
+    }
+  ]
+}
