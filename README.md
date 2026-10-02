@@ -30,7 +30,7 @@ Nothing in the published repo lets a student recover the answers without either 
 
 1. Create a repo and push everything **except** `tools/answers.source.json` (the `.gitignore` already excludes it).
 2. Settings → Pages → Source: *Deploy from a branch* → `main` / `root`.
-3. Open `https://<username>.github.io/<repo>/`.
+3. Open 'https://rcajegas.github.io/SocLogAnalysis/' 
 
 Note: the page loads JSON with `fetch`, so it must be served over HTTP. For local testing run `python -m http.server` in the project folder and open `http://localhost:8000`.
 
